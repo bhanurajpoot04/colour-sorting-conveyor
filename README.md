@@ -105,8 +105,8 @@ colour-sorting-conveyor/
 | Name | Role |
 |---|---|
 | [Bhanu Pratap Singh Rajpoot](https://github.com/bhanurajpoot04) | Hardware + firmware |
-| Teammate 1 | Documentation |
-| Teammate 2 | Hardware |
+| Bhavya pahadiya | Documentation |
+| Parth marotkar | Hardware |
 
 ## Known Limitations / Future Work
 
