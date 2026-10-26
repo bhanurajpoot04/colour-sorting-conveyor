@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 860" width="620" height="860" font-family="Arial, Helvetica, sans-serif">
+  <rect width="620" height="860" fill="#ffffff"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#37474f"/></marker>
+  </defs>
+  <text x="310" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">Firmware Flowchart</text>
+
+  <g stroke="#37474f" stroke-width="2" fill="none" marker-end="url(#a)">
+    <line x1="280" y1="76" x2="280" y2="104"/>
+    <line x1="280" y1="176" x2="280" y2="214"/>
+    <line x1="280" y1="262" x2="280" y2="290"/>
+    <line x1="280" y1="338" x2="280" y2="366"/>
+    <line x1="280" y1="414" x2="280" y2="442"/>
+    <line x1="280" y1="490" x2="280" y2="518"/>
+    <line x1="280" y1="566" x2="280" y2="594"/>
+    <line x1="280" y1="642" x2="280" y2="670"/>
+    <line x1="280" y1="718" x2="280" y2="746"/>
+  </g>
+  <!-- loop back to IR check -->
+  <polyline points="170,770 60,770 60,140 158,140" stroke="#37474f" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <!-- NO branch: keep checking -->
+  <polyline points="400,140 470,140 470,90 330,90 330,117" stroke="#37474f" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="474" y="132" font-size="12" fill="#555">NO: check again</text>
+
+  <!-- Start -->
+  <rect x="200" y="40" width="160" height="36" rx="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="280" y="63" text-anchor="middle" font-size="14" fill="#0d47a1">Power ON / setup()</text>
+
+  <!-- Decision -->
+  <polygon points="280,104 400,140 280,176 160,140" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="280" y="137" text-anchor="middle" font-size="13" fill="#bf360c">IR sensor</text>
+  <text x="280" y="153" text-anchor="middle" font-size="13" fill="#bf360c">LOW?</text>
+    <text x="292" y="196" font-size="12" fill="#555">YES</text>
+
+  <g font-size="13" text-anchor="middle" fill="#1a1a1a">
+    <rect x="170" y="214" width="220" height="48" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="280" y="234">Belt ON (PWM speed)</text>
+    <text x="280" y="251">wait TRAVEL_TO_SENSOR_MS</text>
+
+    <rect x="170" y="290" width="220" height="48" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="280" y="320">Belt OFF</text>
+
+    <rect x="170" y="366" width="220" height="48" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="280" y="386">Read R, G, B</text>
+    <text x="280" y="403">(average of 5 samples)</text>
+
+    <rect x="170" y="442" width="220" height="48" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="280" y="462">Classify colour</text>
+    <text x="280" y="479">RED / GREEN / BLUE / UNKNOWN</text>
+
+    <rect x="170" y="518" width="220" height="48" rx="8" fill="#fbe9e7" stroke="#d84315" stroke-width="2"/>
+    <text x="280" y="538">Servo to colour angle</text>
+    <text x="280" y="555">R 30 / G 90 / B 150 / Unk 90</text>
+
+    <rect x="170" y="594" width="220" height="48" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="280" y="614">Belt ON</text>
+    <text x="280" y="631">wait SORT_RUN_MS</text>
+
+    <rect x="170" y="670" width="220" height="48" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="280" y="700">Belt OFF</text>
+
+    <rect x="170" y="746" width="220" height="48" rx="8" fill="#fbe9e7" stroke="#d84315" stroke-width="2"/>
+    <text x="280" y="766">Servo back to neutral (90)</text>
+    <text x="280" y="783">Wait for next object</text>
+  </g>
+</svg>

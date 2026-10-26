@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 660" width="980" height="660" font-family="Arial, Helvetica, sans-serif">
+  <rect width="980" height="660" fill="#ffffff"/>
+  <text x="490" y="32" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a1a">Colour Sorting Conveyor - Wiring Diagram</text>
+  <text x="490" y="52" text-anchor="middle" font-size="12" fill="#555">Arduino Uno + TCS3200 + IR Sensor + L298N + DC Motor + Servo (SG90)</text>
+
+  <!-- ================= ARDUINO ================= -->
+  <rect x="330" y="110" width="190" height="360" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2.5"/>
+  <text x="425" y="135" text-anchor="middle" font-size="16" font-weight="bold" fill="#0d47a1">Arduino Uno</text>
+
+  <!-- left pins -->
+  <g font-size="12" fill="#0d47a1">
+    <text x="340" y="154">D2</text>
+    <text x="340" y="214">D4</text>
+    <text x="340" y="239">D5</text>
+    <text x="340" y="264">D6</text>
+    <text x="340" y="289">D7</text>
+    <text x="340" y="314">D8</text>
+    <text x="340" y="374">5V</text>
+    <text x="340" y="399">GND</text>
+  </g>
+  <!-- right pins -->
+  <g font-size="12" fill="#0d47a1" text-anchor="end">
+    <text x="510" y="154">D3 (PWM)</text>
+    <text x="510" y="194">D10</text>
+    <text x="510" y="219">D11</text>
+    <text x="510" y="399">GND</text>
+  </g>
+  <!-- bottom pin -->
+  <text x="385" y="460" text-anchor="middle" font-size="12" fill="#0d47a1">D9</text>
+
+  <!-- ================= IR SENSOR ================= -->
+  <rect x="40" y="75" width="170" height="101" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="125" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#bf360c">IR Sensor</text>
+  <text x="125" y="114" text-anchor="middle" font-size="11" fill="#555">(active LOW)</text>
+  <text x="125" y="168" text-anchor="middle" font-size="11" fill="#555">VCC -> 5V   GND -> GND</text>
+  <text x="195" y="144" text-anchor="end" font-size="12" fill="#bf360c">OUT</text>
+  <line x1="210" y1="150" x2="330" y2="150" stroke="#e65100" stroke-width="2.5"/>
+
+  <!-- ================= TCS3200 ================= -->
+  <rect x="40" y="198" width="170" height="222" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+  <text x="125" y="190" text-anchor="middle" font-size="14" font-weight="bold" fill="#4a148c">TCS3200 Colour Sensor</text>
+  <g font-size="12" fill="#4a148c" text-anchor="end">
+    <text x="195" y="214">S0</text>
+    <text x="195" y="239">S1</text>
+    <text x="195" y="264">S2</text>
+    <text x="195" y="289">S3</text>
+    <text x="195" y="314">OUT</text>
+    <text x="195" y="374">VCC</text>
+    <text x="195" y="399">GND</text>
+  </g>
+  <text x="50" y="340" font-size="10" fill="#555">LED pin -> 5V (white LEDs ON)</text>
+  <g stroke="#6a1b9a" stroke-width="2.5">
+    <line x1="210" y1="210" x2="330" y2="210"/>
+    <line x1="210" y1="235" x2="330" y2="235"/>
+    <line x1="210" y1="260" x2="330" y2="260"/>
+    <line x1="210" y1="285" x2="330" y2="285"/>
+    <line x1="210" y1="310" x2="330" y2="310"/>
+  </g>
+  <line x1="210" y1="370" x2="330" y2="370" stroke="#d32f2f" stroke-width="2.5"/>
+  <line x1="210" y1="395" x2="330" y2="395" stroke="#212121" stroke-width="2.5"/>
+
+  <!-- ================= L298N ================= -->
+  <rect x="640" y="110" width="160" height="220" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="720" y="132" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b5e20">L298N Driver</text>
+  <g font-size="12" fill="#1b5e20">
+    <text x="650" y="154">ENA</text>
+    <text x="650" y="194">IN1</text>
+    <text x="650" y="219">IN2</text>
+  </g>
+  <g font-size="12" fill="#1b5e20" text-anchor="end">
+    <text x="790" y="254">+12V</text>
+    <text x="790" y="284">GND</text>
+  </g>
+  <text x="720" y="320" text-anchor="middle" font-size="10" fill="#555">ENA jumper hata do</text>
+  <line x1="520" y1="150" x2="640" y2="150" stroke="#2e7d32" stroke-width="2.5"/>
+  <line x1="520" y1="190" x2="640" y2="190" stroke="#2e7d32" stroke-width="2.5"/>
+  <line x1="520" y1="215" x2="640" y2="215" stroke="#2e7d32" stroke-width="2.5"/>
+
+  <!-- Battery -->
+  <rect x="860" y="230" width="100" height="75" rx="8" fill="#fffde7" stroke="#f9a825" stroke-width="2"/>
+  <text x="910" y="258" text-anchor="middle" font-size="13" font-weight="bold" fill="#8d6e00">12V Supply</text>
+  <text x="910" y="276" text-anchor="middle" font-size="11" fill="#555">(Adapter /</text>
+  <text x="910" y="291" text-anchor="middle" font-size="11" fill="#555">Battery)</text>
+  <line x1="800" y1="250" x2="860" y2="250" stroke="#d32f2f" stroke-width="2.5"/>
+  <line x1="800" y1="280" x2="860" y2="280" stroke="#212121" stroke-width="2.5"/>
+  <text x="830" y="244" text-anchor="middle" font-size="10" fill="#d32f2f">+</text>
+  <text x="830" y="274" text-anchor="middle" font-size="10" fill="#212121">-</text>
+
+  <!-- Common GND: Arduino GND -> L298N GND -->
+  <polyline points="520,395 825,395 825,280" fill="none" stroke="#212121" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <circle cx="825" cy="280" r="4" fill="#212121"/>
+  <text x="528" y="388" font-size="10" fill="#212121">Common GND</text>
+
+  <!-- ================= DC MOTOR ================= -->
+  <line x1="690" y1="330" x2="690" y2="450" stroke="#2e7d32" stroke-width="2.5"/>
+  <line x1="750" y1="330" x2="750" y2="450" stroke="#2e7d32" stroke-width="2.5"/>
+  <text x="682" y="345" text-anchor="end" font-size="11" fill="#1b5e20">OUT1</text>
+  <text x="758" y="345" font-size="11" fill="#1b5e20">OUT2</text>
+  <rect x="650" y="450" width="140" height="70" rx="8" fill="#eceff1" stroke="#455a64" stroke-width="2"/>
+  <circle cx="720" cy="485" r="22" fill="#fff" stroke="#455a64" stroke-width="2"/>
+  <text x="720" y="491" text-anchor="middle" font-size="18" font-weight="bold" fill="#455a64">M</text>
+  <text x="720" y="540" text-anchor="middle" font-size="12" fill="#37474f">DC Motor (Conveyor Belt)</text>
+
+  <!-- ================= SERVO ================= -->
+  <line x1="385" y1="470" x2="385" y2="540" stroke="#ef6c00" stroke-width="2.5"/>
+  <rect x="330" y="540" width="190" height="75" rx="8" fill="#fbe9e7" stroke="#d84315" stroke-width="2"/>
+  <text x="425" y="562" text-anchor="middle" font-size="14" font-weight="bold" fill="#bf360c">Servo SG90 (Diverter)</text>
+  <text x="385" y="585" text-anchor="middle" font-size="11" fill="#bf360c">Signal</text>
+  <text x="440" y="585" text-anchor="middle" font-size="11" fill="#d32f2f">VCC 5V</text>
+  <text x="495" y="585" text-anchor="middle" font-size="11" fill="#212121">GND</text>
+  <text x="425" y="604" text-anchor="middle" font-size="10" fill="#555">Orange = Signal, Red = 5V, Brown = GND</text>
+  <line x1="440" y1="540" x2="440" y2="520" stroke="#d32f2f" stroke-width="2.5"/>
+  <line x1="495" y1="540" x2="495" y2="520" stroke="#212121" stroke-width="2.5"/>
+  <text x="440" y="514" text-anchor="middle" font-size="10" fill="#d32f2f">to 5V rail</text>
+  <text x="495" y="514" text-anchor="middle" font-size="10" fill="#212121">to GND</text>
+
+  <!-- ================= LEGEND / NOTES ================= -->
+  <rect x="40" y="450" width="250" height="165" rx="8" fill="#fafafa" stroke="#bdbdbd" stroke-width="1.5"/>
+  <text x="55" y="474" font-size="13" font-weight="bold" fill="#333">Notes</text>
+  <g font-size="11" fill="#444">
+    <text x="55" y="494">1. Sabhi GND ek common point par jodo.</text>
+    <text x="55" y="512">2. Motor 12V L298N se, Arduino USB/</text>
+    <text x="55" y="527">   alag supply se chalao.</text>
+    <text x="55" y="545">3. Servo agar jitter kare to alag 5V</text>
+    <text x="55" y="560">   supply do (GND common rakho).</text>
+    <text x="55" y="578">4. IR, TCS3200 aur servo ka VCC -> 5V.</text>
+    <text x="55" y="596">5. Bina dot wali crossing = connected nahi.</text>
+  </g>
+</svg>
